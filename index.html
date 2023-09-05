@@ -3,9 +3,33 @@
 
 <head>
     <title>TP DE CHALDU</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <form onsubmit="createPeopleByFormHTML(); return false;"> <!--EL RETURN FALSE ES PARA QUE NO SE RECARGE LA PAGINA-->
+        <h1>Hola</h1>
+        <input type="text" placeholder="name" id="name">
+        <input type="password" placeholder="password" id="password">
+        <button type="submit">send</button>
+    </form>
+    <p id="idParagraph">Hola </p>
+    <script>
+        class People {
+            constructor(name, password) {
+                this.name = name;
+                this.password = password;
+            }
+        }
+        function createPeopleByFormHTML() {
+            const person1 = new People(document.getElementById('name').value, document.getElementById('password').value);
+            console.log(person1);
+            const paragraph = document.getElementById('idParagraph');
+            //    paragraph.textContent = "Hello this is your name: " + <span class='name_password'> person1.name </span> + " and this is your password (careful!!! la re vivia no): " + <span class='name_password'> person1.password </span>;
+            paragraph.textContent = "Hello this is your name: " + person1.name + " and this is your password (careful!!! la re vivia no): " + person1.password;
+        }
+    </script>
+    <!--
     <script>
         var nombre = "juan";
         console.log("Mi nombre es:", nombre);
@@ -39,66 +63,62 @@
 
     </script>
 
-<script>
-    var Person = function(firstName, age, work)
-    {
-        this.firstName= firstName;
-        this._age= age;
-        this.work= work;
-    }
+    <script>
+        var Person = function (firstName, age, work) {
+            this.firstName = firstName;
+            this._age = age;
+            this.work = work;
+        }
 
-class Product
-{
-constructor(name, price,stock)
-{
-    this.name= name;
-    this._price= price;
-    this.stock= stock;
-}
+        class Product {
+            constructor(name, price, stock) {
+                this.name = name;
+                this._price = price;
+                this.stock = stock;
+            }
 
-} 
+        }
 
-var galletitas= new Product();
+        var galletitas = new Product();
 
-galletitas.name= "Pepitos";
-galletitas._price= 420; 
-galletitas.stock= 777;
+        galletitas.name = "Pepitos";
+        galletitas._price = 420;
+        galletitas.stock = 777;
 
-console.log(galletitas);
+        console.log(galletitas);
 
-</script>
+    </script>
 
-<script>
+    <script>
 
-const arrayFruits=["Banana", "Apple", "Pear"];
-console.log(arrayFruits[2]);
-arrayFruits.push("Cherry");
-console.log(arrayFruits[3]);
+        const arrayFruits = ["Banana", "Apple", "Pear"];
+        console.log(arrayFruits[2]);
+        arrayFruits.push("Cherry");
+        console.log(arrayFruits[3]);
 
-const arrayNumeros=[1,2,3,4,5,6];
+        const arrayNumeros = [1, 2, 3, 4, 5, 6];
 
 
 
-   const arrayEven=arrayNumeros.filter((number) => number % 2 === 0);
+        const arrayEven = arrayNumeros.filter((number) => number % 2 === 0);
 
-    console.log(arrayEven);
+        console.log(arrayEven);
 
-</script>
+    </script>
 
 
-<script>
+    <script>
 
-function crearPersona(nombre,edad)
-{
-   const persona ={nombrepersona: nombre, edadpersona: edad};
+        function crearPersona(nombre, edad) {
+            const persona = { nombrepersona: nombre, edadpersona: edad };
 
-   return persona;
-}
+            return persona;
+        }
 
-console.log(crearPersona("juan",5));
+        console.log(crearPersona("juan", 5));
 
-</script>
-
+    </script>
+-->
 </body>
 
 </html>
